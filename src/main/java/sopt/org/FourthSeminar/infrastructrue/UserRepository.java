@@ -11,4 +11,5 @@ public interface UserRepository extends Repository<User, Long> {
     // READ
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
+    Optional<User> findById(Long userId);
 }

@@ -1,18 +1,17 @@
 package sopt.org.FourthSeminar.controller.dto;
 
-import javax.validation.constraints.Email;
+import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@Setter
 public class BoardRequestDto {
-
-    @Email(message = "이메일 형식에 맞지 않습니다")
-    private String email;
 
     @NotBlank
     private String title;
@@ -22,4 +21,6 @@ public class BoardRequestDto {
 
     @NotNull
     private Boolean isPublic;
+
+    private List<MultipartFile> thumbnail;
 }
